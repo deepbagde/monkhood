@@ -1,22 +1,4 @@
-import React, { useState } from 'react';
-
-const FEATURE_TOOLTIPS = {
-  "Daily Monk Morning Sangha Sessions": "Live 30-min guided meditation at dawn led by experienced monks.",
-  "Sunday Weekly Live Community Sessions": "Interactive Sunday workshops for Q&A, group reflection & teachings.",
-  "Premium Recorded Courses": "On-demand masterclasses covering mindfulness, breathwork & philosophy.",
-  "Live Guest Expert Sessions": "Exclusive live masterclasses from international spiritual leaders.",
-  "Session Recordings": "Unlimited access to HD recordings of all past live sessions.",
-  "Community Access": "Connect with global Sangha practitioners in a warm, ad-free portal.",
-  "Mindfulness & Meditation Library": "200+ guided audio tracks for sleep, stress, focus & deep peace.",
-  "Buddha's Wisdom for Modern Life": "Practical ancient teachings decoded for modern everyday living.",
-  "New Course Every Month": "Fresh structured curriculum added every single month.",
-  "Early Access to Every New Course": "Get 7-day priority access before public course launches.",
-  "Priority Registration for Offline Events": "Reserved VIP seating for live retreats and offline Sangha meets.",
-  "Members-only Surprise Sessions": "Unannounced live meditation circles with guest monks.",
-  "VIP Community Badge": "Distinguished glowing badge on your Sangha community profile.",
-  "Gamification": "Track meditation streaks, level up & earn mindfulness badges.",
-  "Monthly Challenges": "Guided 21-day transformation challenges with community accountability."
-};
+import React from 'react';
 
 const MONTHLY_FEATURES = [
   "Daily Monk Morning Sangha Sessions",
@@ -52,8 +34,6 @@ export default function PricingSection({
   customMonthlyUrl = "https://learn.monkhoodclub.com/web/checkout/6a690eba258d6e22aee85fcf", 
   customYearlyUrl = "https://learn.monkhoodclub.com/web/checkout/6a691103258d6e22aee8f2d3" 
 }) {
-  const [hoveredFeature, setHoveredFeature] = useState(null);
-
   return (
     <section className="relative py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto z-10">
       
@@ -74,7 +54,7 @@ export default function PricingSection({
               Perfect to begin your mindfulness journey.
             </p>
 
-            {/* Price (Matching User's Screenshot Font Exactly) */}
+            {/* Price */}
             <div className="mb-6 flex items-baseline space-x-1.5 border-b border-amber-500/20 pb-6">
               <span className="font-price text-5xl sm:text-6xl font-semibold gold-text-gradient tracking-tight">
                 ₹51
@@ -91,40 +71,26 @@ export default function PricingSection({
               </span>
             </div>
 
-            {/* Checkmark Features with Low-Light Muted Ticks */}
+            {/* Simple Clean Checkmark Features (Hover Effects Removed) */}
             <ul className="space-y-2.5 mb-8">
               {MONTHLY_FEATURES.map((feature, idx) => (
-                <li 
-                  key={idx} 
-                  onMouseEnter={() => setHoveredFeature(feature)}
-                  onMouseLeave={() => setHoveredFeature(null)}
-                  className="relative flex items-center space-x-3 text-xs sm:text-sm text-slate-200 cursor-pointer group/item transition-colors hover:text-amber-200"
-                >
-                  {/* Low-light muted checkmark circle */}
+                <li key={idx} className="flex items-center space-x-3 text-xs sm:text-sm text-slate-200">
                   <span className="w-4 h-4 rounded-full bg-[#181308] border border-amber-600/40 flex items-center justify-center text-amber-500/80 text-[10px] flex-shrink-0">
                     ✓
                   </span>
-                  <span className="font-medium text-slate-200 group-hover/item:text-amber-200">{feature}</span>
-
-                  {/* Interactive Tooltip Card */}
-                  {hoveredFeature === feature && FEATURE_TOOLTIPS[feature] && (
-                    <div className="absolute left-6 bottom-full mb-2 z-30 w-64 p-3 rounded-xl bg-[#17112b] border border-amber-400/50 shadow-[0_0_25px_rgba(0,0,0,0.8)] text-xs text-amber-100 backdrop-blur-xl animate-fade-in pointer-events-none">
-                      <span className="font-semibold text-amber-300 block mb-0.5">✨ Sangha Benefit:</span>
-                      {FEATURE_TOOLTIPS[feature]}
-                    </div>
-                  )}
+                  <span className="font-medium text-slate-200">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Button & Subtext */}
+          {/* Button with Satisfying Tactile Click Animation */}
           <div>
             <a
               href={customMonthlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full block text-center py-3.5 px-6 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-[#2a1b05] via-[#4d3209] to-[#2a1b05] hover:from-[#3d2808] hover:to-[#5e3d0a] text-amber-200 border border-amber-500/60 hover:border-amber-300 shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all cursor-pointer"
+              className="w-full block text-center py-3.5 px-6 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-[#2a1b05] via-[#4d3209] to-[#2a1b05] hover:from-[#3d2808] hover:to-[#5e3d0a] text-amber-200 border border-amber-500/60 hover:border-amber-300 shadow-[0_0_25px_rgba(212,175,55,0.25)] active:scale-[0.96] active:brightness-90 transition-transform duration-100 ease-out cursor-pointer select-none"
             >
               Join Monthly
             </a>
@@ -140,7 +106,7 @@ export default function PricingSection({
         {/* ========================================================== */}
         <div className="relative group rounded-3xl p-6 sm:p-8 pt-8 sm:pt-9 bg-[#0d091e]/90 border-2 border-amber-400/80 hover:border-amber-300 backdrop-blur-xl shadow-[0_0_50px_rgba(245,215,127,0.35)] transition-all duration-500 flex flex-col justify-between overflow-visible">
           
-          {/* Badge: MOST POPULAR (100% VISIBLE ON DESKTOP & MOBILE) */}
+          {/* Badge: MOST POPULAR */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
             <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 px-5 py-1.5 rounded-full text-[11px] font-black tracking-widest uppercase shadow-[0_0_25px_rgba(245,215,127,0.9)] flex items-center space-x-1.5 border border-yellow-200 whitespace-nowrap">
               <span>⚡</span>
@@ -157,7 +123,7 @@ export default function PricingSection({
               Pay once and enjoy the entire year.
             </p>
 
-            {/* Price Row (Matching User's Screenshot Font Exactly) */}
+            {/* Price Row */}
             <div className="mb-2 flex items-baseline space-x-2">
               <span className="line-through text-slate-500 font-price text-xl font-normal">
                 ₹612
@@ -184,40 +150,26 @@ export default function PricingSection({
               </span>
             </div>
 
-            {/* Checkmark Features with Low-Light Muted Ticks */}
+            {/* Simple Clean Checkmark Features (Hover Effects Removed) */}
             <ul className="space-y-2.5 mb-8">
               {YEARLY_FEATURES.map((feature, idx) => (
-                <li 
-                  key={idx} 
-                  onMouseEnter={() => setHoveredFeature(feature)}
-                  onMouseLeave={() => setHoveredFeature(null)}
-                  className="relative flex items-center space-x-3 text-xs sm:text-sm text-slate-200 cursor-pointer group/item transition-colors hover:text-amber-200"
-                >
-                  {/* Low-light muted checkmark circle */}
+                <li key={idx} className="flex items-center space-x-3 text-xs sm:text-sm text-slate-200">
                   <span className="w-4 h-4 rounded-full bg-[#181308] border border-amber-600/40 flex items-center justify-center text-amber-500/80 text-[10px] flex-shrink-0">
                     ✓
                   </span>
-                  <span className="font-medium text-slate-200 group-hover/item:text-amber-200">{feature}</span>
-
-                  {/* Interactive Tooltip Card */}
-                  {hoveredFeature === feature && FEATURE_TOOLTIPS[feature] && (
-                    <div className="absolute left-6 bottom-full mb-2 z-30 w-64 p-3 rounded-xl bg-[#17112b] border border-amber-400/50 shadow-[0_0_25px_rgba(0,0,0,0.8)] text-xs text-amber-100 backdrop-blur-xl animate-fade-in pointer-events-none">
-                      <span className="font-semibold text-amber-300 block mb-0.5">✨ Sangha Benefit:</span>
-                      {FEATURE_TOOLTIPS[feature]}
-                    </div>
-                  )}
+                  <span className="font-medium text-slate-200">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Button */}
+          {/* Button with Satisfying Tactile Click Animation */}
           <div>
             <a
               href={customYearlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full block text-center py-3.5 px-6 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 hover:brightness-110 text-slate-950 shadow-[0_0_30px_rgba(245,215,127,0.5)] transition-all cursor-pointer"
+              className="w-full block text-center py-3.5 px-6 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 hover:brightness-110 text-slate-950 shadow-[0_0_30px_rgba(245,215,127,0.5)] active:scale-[0.96] active:brightness-90 transition-transform duration-100 ease-out cursor-pointer select-none"
             >
               Join Yearly
             </a>

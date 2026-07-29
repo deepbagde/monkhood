@@ -13,11 +13,14 @@ export default function HeroBanner() {
         {/* Animated outer aura glow */}
         <div className="absolute -inset-1 bg-gradient-to-r from-amber-400/30 via-yellow-300/40 to-amber-600/30 blur-lg opacity-70 group-hover:opacity-100 transition duration-1000 -z-10"></div>
 
-        {/* Banner Artwork Container */}
-        <div className="relative rounded-[22px] overflow-hidden bg-[#06040c]">
+        {/* Banner Artwork Container Optimized for Fast Mobile Loading */}
+        <div className="relative rounded-[22px] overflow-hidden bg-[#06040c] min-h-[190px] sm:min-h-[320px]">
           <img 
             src="/mondkhud.png" 
             alt="Monkhood Club Digital Sangha Banner" 
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-auto object-cover object-center max-h-[640px] rounded-[22px] transition-transform duration-700 hover:scale-[1.006]"
           />
           {/* Subtle energetic bottom shadow fade */}
