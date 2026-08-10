@@ -15,10 +15,10 @@ export default function HelpCard() {
           <div>
             <span className="text-slate-400 font-normal">Call: </span>
             <a 
-              href="tel:+918080024070" 
+              href="tel:+919503129479" 
               className="font-bold text-slate-100 hover:text-amber-300 transition-colors"
             >
-              +91 80800 24070
+              +91 95031 29479
             </a>
           </div>
 

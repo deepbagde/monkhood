@@ -10,7 +10,7 @@ import BuddhaCanvas from './components/BuddhaCanvas';
 // MONKHOOD CLUB CHECKOUT URLS:
 // =========================================================================
 const CUSTOM_MONTHLY_CHECKOUT_URL = "https://learn.monkhoodclub.com/web/checkout/6a690eba258d6e22aee85fcf"; 
-const CUSTOM_YEARLY_CHECKOUT_URL = "https://learn.monkhoodclub.com/web/checkout/6a691103258d6e22aee8f2d3";
+const CUSTOM_YEARLY_CHECKOUT_URL = "https://learn.monkhoodclub.com/l/6dce3137f9";
 
 export default function App() {
   return (

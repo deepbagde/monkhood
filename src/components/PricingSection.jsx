@@ -32,7 +32,7 @@ const YEARLY_FEATURES = [
 
 export default function PricingSection({ 
   customMonthlyUrl = "https://learn.monkhoodclub.com/web/checkout/6a690eba258d6e22aee85fcf", 
-  customYearlyUrl = "https://learn.monkhoodclub.com/web/checkout/6a691103258d6e22aee8f2d3" 
+  customYearlyUrl = "https://learn.monkhoodclub.com/l/6dce3137f9" 
 }) {
   return (
     <section className="relative py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto z-10">
