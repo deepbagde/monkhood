@@ -19,8 +19,11 @@ export default function BuddhaCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
+    const isMobile = width < 640;
+    const particleCount = isMobile ? 20 : 50;
+
     // Subtle Golden Stardust Particles
-    const particles = Array.from({ length: 50 }, () => ({
+    const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       radius: Math.random() * 1.8 + 0.5,
@@ -51,8 +54,10 @@ export default function BuddhaCanvas() {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = Math.max(0.1, Math.min(0.5, p.alpha));
-        ctx.shadowColor = '#ffd740';
-        ctx.shadowBlur = 8;
+        if (!isMobile) {
+          ctx.shadowColor = '#ffd740';
+          ctx.shadowBlur = 8;
+        }
         ctx.fill();
         ctx.restore();
       });

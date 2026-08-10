@@ -15,14 +15,17 @@ export default function HeroBanner() {
 
         {/* Banner Artwork Container Optimized for Fast Mobile Loading */}
         <div className="relative rounded-[22px] overflow-hidden bg-[#06040c] min-h-[190px] sm:min-h-[320px]">
-          <img 
-            src="/mondkhud.png" 
-            alt="Monkhood Club Digital Sangha Banner" 
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-auto object-cover object-center max-h-[640px] rounded-[22px] transition-transform duration-700 hover:scale-[1.006]"
-          />
+          <picture className="w-full h-auto">
+            <source srcSet="/mondkhud.webp" type="image/webp" />
+            <img 
+              src="/mondkhud.webp" 
+              alt="Monkhood Club Digital Sangha Banner" 
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full h-auto object-cover object-center max-h-[640px] rounded-[22px] transition-transform duration-700 hover:scale-[1.006]"
+            />
+          </picture>
           {/* Subtle energetic bottom shadow fade */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#040308] via-transparent to-transparent pointer-events-none opacity-30"></div>
         </div>
